@@ -29,9 +29,9 @@ export class AuthDataSourceImpl implements AuthDatasource{
             if (!isMatching) throw CustumError.badRequest('Password is not valid');
 
             const mappedUser = {
-                ...user.toObject(),
-                id: user._id.toString(),
-            };
+    ...user,
+    id: user.id.toString(), // ← PostgreSQL ya tiene id
+};
 
             return UserMapper.userEntityFromObject(mappedUser);
         } catch (error) {

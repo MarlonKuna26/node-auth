@@ -19,10 +19,14 @@ app.use(express.urlencoded({ extended: true })); // Agregado para manejar x-www-
 
 async function main () {
 
-    await MongoDatabase.connect({
-        dbName: envs.MONGO_DB_NAME,
-        mongoUrl: envs.MONGO_URL
-    });
+    // Cambiar la llamada a connect:
+await MongoDatabase.connect({
+    host: envs.POSTGRES_HOST,
+    port: envs.POSTGRES_PORT,
+    database: envs.POSTGRES_DB_NAME,
+    user: envs.POSTGRES_USER,
+    password: envs.POSTGRES_PASSWORD
+});
 
     new Server({
         port: envs.PORT,

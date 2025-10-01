@@ -19,7 +19,8 @@ export class AuthMiddleware {
             const payload= await JwtAdapter.validateToken<{id: string}>(token);
             if (!payload) return res.status(401).json({error:'Invalid token'});
 
-            const user=await UserModel.findById(payload.id);
+            const userId = parseInt(payload.id); // Convertir string a number
+const user = await UserModel.findById(userId);
             if(!user) return res.status(401).json({error:'invalid token - user not found'});
 
             // Aseguramos que req.body sea un objeto válido
