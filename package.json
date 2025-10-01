@@ -16,6 +16,7 @@
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^20.19.17",
+    "@types/pg": "^8.15.5",
     "rimraf": "^6.0.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.2"
@@ -26,6 +27,7 @@
     "env-var": "^7.5.0",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.18.2"
+    "mongoose": "^8.18.2",
+    "pg": "^8.16.3"
   }
 }
